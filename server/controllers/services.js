@@ -9,7 +9,7 @@ module.exports = {
                console.log("params", req.params);
                const services = await Service
                     .find({})
-               // .populate(["parent", "provider"])
+                    .populate(user)
                // .select('-password')
 
                res.status(200).json(services);
