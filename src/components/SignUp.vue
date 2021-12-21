@@ -85,7 +85,7 @@
                </div>
           </div>
           <button type="submit" class="btn btn-primary">Sign up</button>
-          <small id="signupHelp" class="form-text text-muted">Already have an account ? <span>Sign In</span></small>
+          <small id="signupHelp" class="form-text text-muted">Already have an account ? <router-link to="/signin"><span>Sign In</span></router-link> </small>
 
      </form>
      
