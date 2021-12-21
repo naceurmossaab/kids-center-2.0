@@ -1,19 +1,19 @@
 <template>
-  <div>
-    <SignIn />
-    <SignUp />
-  </div>
+<Forum />
 </template>
 
 <script>
-import SignIn from './components/SignIn.vue'
-import SignUp from './components/SignUp.vue'
+import Forum from './components/Forum.vue'
+// import SignIn from './components/SignIn.vue'
+// import SignUp from './components/SignUp.vue'
+
 
 export default {
   name: 'App',
   components: {
-    SignIn,
-    SignUp
+    // SignIn,
+    // SignUp,
+    Forum
   }
 }
 </script>
