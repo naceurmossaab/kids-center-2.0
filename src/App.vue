@@ -7,9 +7,9 @@
     <router-link tag="a" to="/forum"><span>Forum</span></router-link>
     <router-link tag="a" to="/"><span>Search</span></router-link>
     <div class="spacer-right"></div>
-    <span v-if="user.username" class="d-flex align-items-center"><img :src="user.user_img" class="user-logo" />{{user.username}}</span>
-    <router-link v-if="!user.username" tag="a" to="/signin"><span class="navbar-title">Sign In</span></router-link>
-    <router-link v-if="user.username" tag="a" to="/"><span @click="logout" class="navbar-title">Log Out</span></router-link>
+    <router-link v-if="user.username"  tag="a" to="/profile"><span class="d-flex align-items-center"><img :src="user.user_img" class="user-logo" />{{user.username}}</span></router-link>
+    <router-link v-if="!user.username" tag="a" to="/signin"> <span class="navbar-title">Sign In</span></router-link>
+    <router-link v-if="user.username"  tag="a" to="/">       <span @click="logout" class="navbar-title">Log Out</span></router-link>
   </div>
   <router-view/>
 </template>
