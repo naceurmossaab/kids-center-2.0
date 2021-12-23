@@ -11,7 +11,7 @@
                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
           </div>
           <button type="submit" class="btn btn-primary">Sign In</button>
-          <small id="signupHelp" class="form-text text-muted">Don't have an account ? <span>Sign Up</span></small>
+          <small id="signupHelp" class="form-text text-muted">Don't have an account ? <router-link to="/signup"><span>Sign Up</span></router-link> </small>
           <label for="errorSignIn" class="form-text error-form"></label>
      </form>
      </div>
