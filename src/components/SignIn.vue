@@ -1,26 +1,60 @@
 <template>
      <div class="signin">
-     <h1>Sign In </h1>
-     <form >
+     <!-- <h1>Sign In </h1> -->
+     <form @submit.prevent="send">
           <div class="form-group">
                <label for="exampleInputUsername1">Username</label>
-               <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" required>
+               <input v-model="username" type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" required>
           </div>
           <div class="form-group">
                <label for="exampleInputPassword1">Password</label>
-               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+               <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
           </div>
           <button type="submit" class="btn btn-primary">Sign In</button>
           <small id="signupHelp" class="form-text text-muted">Don't have an account ? <router-link to="/signup"><span>Sign Up</span></router-link> </small>
-          <label for="errorSignIn" class="form-text error-form"></label>
+          <label for="errorSignIn" class="form-text error-form">{{status}}</label>
      </form>
      </div>
 </template>
 
 <script>
+import axios from 'axios';
+// import EventBus from '../EventBus';
+
 export default {
      name : 'SignIn',
-     props: { }
+     data(){
+          return{
+               user    : {},
+               username: '',
+               password: '',
+               status  : ''
+          }
+     },
+     methods :{
+          send(){
+               const user = {
+                    username: this.username,
+                    password: this.password
+               }
+               
+               axios.post('http://localhost:8000/auth/signin', user)
+                    .then(({data}) => {
+                         console.log("signin response : ", data);
+                         this.username = '';
+                         this.password = '';
+                         this.user   = data;
+                         this.status = '';
+
+                         })
+                    .catch(err => {
+                         this.status = "wrrong username/password";
+                         console.log("signin error : ", err);
+                         })
+
+          }
+     }
+     
 }
 </script>
 
@@ -40,10 +74,10 @@ export default {
 
      form{
           padding: 1rem 2rem;
-          background-color: rgb(240, 240, 240);
           width: 500px;
           border-radius: 5px;
-          box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.3);
+          background-color: #fff;
      }
 
      form *{

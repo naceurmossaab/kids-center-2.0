@@ -1,22 +1,22 @@
 <template>
      <div class="signup">
-     <h1>Sign Up</h1>
-     <form>
+     <!-- <h1>Sign Up</h1> -->
+     <form @submit.prevent="send">
           <div class="form-row">
                <div class="form-category">
                     You are :
                     <div class="form-check form-check-inline">
-                         <input class="form-check-input m-2" type="radio" name="category" id="inlineRadio1" value="parent" checked>
+                         <input v-model="category" @click="specialityShow('parent')" class="form-check-input m-2" type="radio" name="category" id="inlineRadio1" value="parent" checked>
                          <label class="form-check-label" for="inlineRadio1">Parent</label>
                     </div>
                     <div class="form-check form-check-inline">
-                         <input class="form-check-input m-2" type="radio" name="category" id="inlineRadio2" value="provider">
+                         <input v-model="category" @click="specialityShow('provider')" class="form-check-input m-2" type="radio" name="category" id="inlineRadio2" value="provider">
                          <label class="form-check-label" for="inlineRadio2">Service Provider</label>
                     </div>
                </div> 
-               <div class="form-group col-md-6" >
-                    <label for="inputSpecialty">Specialty</label>
-                    <select class="form-control" id="inputSpecialty" size="1" name="specialty">
+               <div class="form-group col-md-6" v-if="specialitySelect">
+                    <label for="inputSpeciality">Specialty</label>
+                    <select v-model="speciality" class="form-control" id="inputSpecialty" size="1" name="specialty">
                          <option selected>Specialty</option>
                          <option value="English">English</option>
                          <option value="Français">Français</option>
@@ -28,33 +28,33 @@
                </div>
                <div class="form-group">
                     <label for="inputFullname">Full Name</label>
-                    <input type="text" class="form-control" id="inputFullname" placeholder="Full Name">
+                    <input v-model="fullname" type="text" class="form-control" id="inputFullname" placeholder="Full Name">
                </div>
                <div class="form-group">
                     <label for="inputUsername">Username</label>
-                    <input type="text" class="form-control" id="inputUsername" placeholder="username">
+                    <input v-model="username" type="text" class="form-control" id="inputUsername" placeholder="username">
                </div>
                <div class="form-group">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <input v-model="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
                </div>
                <div class="form-group">
                     <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    <input v-model="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
                </div>
           </div>
           <div class="form-group">
-               <label for="inputAddress">Phone</label>
-               <input type="text" class="form-control" id="inputPhone" placeholder="phone number">
+               <label for="inputPhone">Phone</label>
+               <input v-model="phone" type="text" class="form-control" id="inputPhone" placeholder="phone number">
           </div>
           <div class="form-group">
                <label for="inputAddress">Address</label>
-               <input type="email" class="form-control" id="inputAddress" placeholder="Tunisie 4000 Ariana">
+               <input v-model="address" type="text" class="form-control" id="inputAddress" placeholder="Tunisie 4000 Ariana">
           </div>
           <div class="form-row">
                <div class="form-group col-md-6">
                     <label for="inputState">City</label>
-                    <select id="inputState" class="form-control">
+                    <select v-model="city" id="inputState" class="form-control">
                          <option value="">City</option>
                          <option value="Tunis">Tunis</option>
                          <option value="Ariana">Ariana</option>
@@ -93,9 +93,47 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
      name : 'SignUp',
-     props: { }
+     data(){
+          return{
+               specialitySelect: false,
+               category  : '',
+               speciality: '',
+               fullname  : '',
+               username  : '',
+               email     : '',
+               password  : '',
+               phone     : '',
+               address   : '',
+               city      : ''
+
+          }
+     },
+     methods :{
+          send(){
+               const user = {
+                    category  : this.category,
+                    speciality: this.speciality,
+                    fullname  : this.fullname,
+                    username  : this.username,
+                    email     : this.email,
+                    password  : this.password,
+                    phone     : this.phone,
+                    address   : this.address,
+                    city      : this.city
+               }
+               
+               axios.post('http://localhost:8000/auth/signup', user)
+                    .then(({data}) => console.log("signup response : ", data))
+                    .catch(err => console.log("signup response : ", err))
+          },
+          specialityShow(e){
+               this.specialitySelect = e === 'provider' ? true : false;
+          }
+     }
 }
 </script>
 
