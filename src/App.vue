@@ -4,7 +4,7 @@
     <router-link tag="a" to="/"><span>Kids Center</span></router-link>
     <div class="spacer"></div>
     <router-link tag="a" to="/"><span>Home</span></router-link>
-    <router-link tag="a" to="/"><span>Events</span></router-link>
+    <router-link tag="a" to="/forum"><span>Forum</span></router-link>
     <router-link tag="a" to="/"><span>Search</span></router-link>
     <div class="spacer-right"></div>
     <!-- <span rofile"><img src={{user.user_img}} class="user-logo" />{{user.username}}</span> -->
