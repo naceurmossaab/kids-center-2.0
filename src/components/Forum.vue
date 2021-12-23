@@ -1,8 +1,8 @@
 <template>
 <div class="panel">
-  {{getAllTheMessages()}}
-            <input type="text" v-model="newPost"/>
+        <input type="text" v-model="newPost"/>
         <button v-on:click="addNewPost()">add</button>
+        <div class="user">{{user.username}}</div>
     <div v-for="post in posts" v-bind:key="post.id">
 		<div class="panel-element">
 		<div class="element-actions">
@@ -31,14 +31,23 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import {inject} from 'vue';
+
 export default {
     name : 'Forum',
     data(){
         return {
-            newPost:"",
-            posts : []
+            user   : {},
+            newPost: "",
+            posts  : [],
+            EventBus: inject('EventBus')
         }
+    },
+    mounted(){
+      this.EventBus.on("user", (user) => this.user = user);
+      console.log("forum user : ", this.user);
+      this.getAllTheMessages();
     },
     methods: {
         createNewPost() {
