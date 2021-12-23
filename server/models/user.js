@@ -34,9 +34,9 @@ userSchema.statics.login = async function (username, plainTextPassword) {
                foundUser.password
           );
           if (success) return foundUser;
-          else throw Error("Incorrect username/password");
+          // else throw Error("Incorrect username/password");
      }
-     else throw Error("Username not exist");
+     // else throw Error("Username not exist");
 };
 
 userSchema.pre("save", async function (next) {
