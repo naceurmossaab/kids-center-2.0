@@ -12,7 +12,7 @@ module.exports = {
   },
   find_All: async (req, res, next) => {
     try {
-      const events = await Events.find({});
+      const events = await Events.find({}).sort({createdAt: -1}).exec();
          
       res.status(200).json(events);
     } catch (error) {

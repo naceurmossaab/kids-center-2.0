@@ -19,15 +19,11 @@
                     <select v-model="speciality" class="form-control" id="inputSpecialty" size="1" name="specialty">
                          <option selected>Specialty</option>
                          <option value="English">English</option>
-                         <option value="Health care">Health care</option>
-                         <option value="Mental care">Mental care</option>
-                         <option value="School Transportation">School Transportation</option>
-                         <option value="Healthy food">Healthy food</option>
-                         <option value="Sport activities">Sport activities</option>
-                         <option value="Entertainment activities">Entertainment activities</option>
-                         <option value="Birthday and parties">Birthday and parties</option>
-                         <option value="Prepare Gifts">Prepare Gifts</option>
-                         <option value="Baby siting">Baby siting</option>
+                         <option value="Français">Français</option>
+                         <option value="Arabe">Arabe</option>
+                         <option value="Math">Math</option>
+                         <option value="Science">Science</option>
+                         <option value="Physics">Physics</option>
                     </select>
                </div>
                <div class="form-group">
@@ -141,53 +137,54 @@ export default {
 }
 </script>
 
-<style scoped>
-	.signup {
-		margin: 4rem 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	.signup h1 {
-		font-weight: 700;
-		color: rgb(140, 140, 140);
-		margin: 1rem 0;
-	}
+<style>
+     .signup{
+          margin: 4rem 0;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+     .signup h1{
+          font-weight: 700;
+          color: rgb(140, 140, 140);
+          margin: 1rem 0;
+     }
 
-	form {
-		padding: 1rem 2rem;
-		background-color: rgb(240, 240, 240);
-		width: 500px;
-		border-radius: 5px;
-		box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
-	}
+     form{
+          padding: 1rem 2rem;
+          background-color: rgb(240, 240, 240);
+          width: 500px;
+          border-radius: 5px;
+          box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
+     }
 
-	form * {
-		margin: 0.3rem 0;
-	}
+     form *{
+          margin: 0.3rem 0;
+     }
 
-	form button {
-		margin: 0.5rem 1rem 0 0;
-		padding: 0.2rem 1rem;
-	}
+     form button{
+          margin: 0.5rem 1rem 0 0;
+          padding: .2rem 1rem;
+     }
 
-	form span {
-		text-decoration: underline;
-		cursor: pointer;
-	}
+     form span{
+          text-decoration: underline;
+          cursor: pointer;
+     }
 
-	.form-category {
-		font-weight: 500;
-		font-size: 16px;
-	}
+     .form-category{
+          font-weight: 500;
+          font-size: 16px;
+     }
 
-	.error-form {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: red;
-		font-size: 15px;
-		font-weight: 500;
-	}
+     .error-form{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: red;
+          font-size: 15px;
+          font-weight: 500;
+     }
+
 </style>

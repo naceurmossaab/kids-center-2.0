@@ -21,16 +21,27 @@ module.exports = {
           }
      },
      signup: async (req, res, next) => {
+          const { username, fullname, email, address, category, password, city,phone,specialty } = req.body;
           try {
-               const savedUser = await User.create(req.body);
-               
+               const savedUser = await User.create({
+                    category,
+                    fullname,
+                    username,
+                    email,
+                    password,
+                    address,
+                    city,
+                    phone,
+                    specialty
+               });
+
                const foundUser = await User
                     .findById(savedUser._id)
                     .select("-password");
 
                res.status(201).json(foundUser);
           } catch (error) {
-               res.status(400).json(error);
+               res.status(400).json(simplify(error));
           }
      },
      logout: async (req, res, next) => {
