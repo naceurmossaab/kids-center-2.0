@@ -2,19 +2,8 @@ const Events = require("../models/event");
 
 module.exports = {
   create_One: async (req, res, next) => {
-    const { title,eventBy, location, city, contact, date, event_img} =
-      req.body;
     try {
-      const event = await Events.create({
-        title,
-        eventBy,
-        title,
-        location,
-        city,
-        contact,
-        date,
-        event_img,
-      });
+      const event = await Events.create(req.body);
 
       res.status(200).json(event);
     } catch (error) {

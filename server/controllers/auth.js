@@ -11,12 +11,7 @@ module.exports = {
           const { username, password } = req.body;
 
           try {
-               const loggedInUser = await User.login(username, password);
-
-               // i did not want to return user, because, I could not show the hashed password to the client
-               // that's why I created a new variable called foundUser
-               const foundUser = await User
-                    .findByIdAndUpdate(loggedInUser._id, { connected: true }, { new: true })
+               const foundUser = await User.login(username, password);
 
                const token = createToken(foundUser._id);
                res.cookie("jwt", token, { httpOnly: true, maxAge: 365 * 24 * 60 * 60 * 1000 });
