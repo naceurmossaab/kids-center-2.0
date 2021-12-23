@@ -1,22 +1,31 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
+// category
+// speciality
+// fullname
+// username
+// email
+// password
+// phone
+// address
+// city
+
 const userSchema = mongoose.Schema(
 	{
-		gender: String,
-		fullName: String,
-		userName: { type: String, unique: true },
-		location: String,
-		email: String,
-		mobile: String,
-		categorie: String,
-		service: { type: String, default: "" },
-		rating: { type: Number, default: 0 },
+		category: String,
+		specialty : { type: String, default: "" },
+		fullname: String,
+		username: { type: String, unique: true },
+		email   : String,
 		password: String,
-		picture: {
-			type: String,
-			default: "https://www.bootdey.com/img/Content/avatar/avatar7.png",
-		},
+		phone   : String,
+		address : String,
+		city    : String,
+		service : { type: String, default: "" },
+		rating  : { type: Number, default: 0 },
+		gender  : { type: String, default: "" },
+		picture : { type: String, default: "https://www.bootdey.com/img/Content/avatar/avatar7.png" },
 	},
 	{ timestamps: true }
 );

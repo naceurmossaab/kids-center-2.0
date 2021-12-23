@@ -1,10 +1,6 @@
 <template>
 	<div class="services-conainer">
-		<div
-			class="service-conainer"
-			v-for="service in services"
-			:key="service._id"
-		>
+		<div class="service-conainer" v-for="service in services" :key="service._id" >
 			<Service :service="service" />
 		</div>
 	</div>

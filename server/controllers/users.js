@@ -86,7 +86,8 @@ module.exports = {
 		try {
 			console.log("hhhhhhhhhhhhhhhh");
 			let providers = await User.find({
-				categorie: "service-provider",
+				// categorie: "service-provider",
+				category: "provider",
 			});
 			res.send(providers);
 		} catch (error) {

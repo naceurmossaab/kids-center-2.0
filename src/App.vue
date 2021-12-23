@@ -5,7 +5,7 @@
     <div class="spacer"></div>
     <router-link  to="/"><span>Home</span></router-link>
     <router-link to="/forum"><span>Forum</span></router-link>
-    <router-link to="/"><span>Search</span></router-link>
+    <router-link to="/services"><span>Services</span></router-link>
     <div class="spacer-right"></div>
     <router-link v-if="user.username"  to="/profile"><span class="d-flex align-items-center"><img :src="user.user_img" class="user-logo" />{{user.username}}</span></router-link>
     <router-link v-if="!user.username" to="/signin"> <span class="navbar-title">Sign In</span></router-link>

@@ -3,7 +3,7 @@
 		<figcaption>
 			<img class="user-picture" :src="service.picture" alt="" />
 			<h2>
-				{{ service.fullName }}
+				{{ service.fullname }}
 			</h2>
 			<p>{{ service.location }}</p>
 			<p>{{ service.mobile }}</p>
@@ -29,7 +29,7 @@
 		data() {
 			return {
 				servisesPics: {
-					Teacher:
+					"English":
 						"https://media.istockphoto.com/photos/african-american-girl-raising-her-hands-while-sitting-on-her-desk-in-picture-id1323715308?b=1&k=20&m=1323715308&s=170667a&w=0&h=MeG-_I7iI4HsElwGrxCgMm7P4QkJsWGmwvcrOyYnGlc=",
 					"Health care":
 						"https://media.istockphoto.com/photos/african-american-doctor-with-face-mask-examining-boys-throat-during-a-picture-id1287924870?b=1&k=20&m=1287924870&s=170667a&w=0&h=IQXjrdzzp83xAZyd7oLHog0wCluKFZc5RD-Z5ZsUirM=",
@@ -212,11 +212,11 @@
 			left: 0px;
 		}
 	}
-	img {
+	/* img {
 		max-width: none !important;
-	}
+	} */
 	.user-picture {
 		border-radius: 50%;
-		margin-left: 45px;
+		/* margin-left: 45px; */
 	}
 </style>

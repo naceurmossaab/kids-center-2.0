@@ -5,7 +5,7 @@ const UsersController = require("../controllers/users");
 const ServicesController = require("../controllers/services");
 
 router.route("/")
-  .get(UsersController.find)
+  .get(UsersController.find_all_service_providers)
 
 router.route("/:servicesId")
   .get(ServicesController.find_One) 

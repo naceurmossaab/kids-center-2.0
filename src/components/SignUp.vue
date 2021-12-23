@@ -19,11 +19,15 @@
                     <select v-model="speciality" class="form-control" id="inputSpecialty" size="1" name="specialty">
                          <option selected>Specialty</option>
                          <option value="English">English</option>
-                         <option value="Français">Français</option>
-                         <option value="Arabe">Arabe</option>
-                         <option value="Math">Math</option>
-                         <option value="Science">Science</option>
-                         <option value="Physics">Physics</option>
+                         <option value="Health care">Health care</option>
+                         <option value="Mental care">Mental care</option>
+                         <option value="School Transportation">School Transportation</option>
+                         <option value="Healthy food">Healthy food</option>
+                         <option value="Sport activities">Sport activities</option>
+                         <option value="Entertainment activities">Entertainment activities</option>
+                         <option value="Birthday and parties">Birthday and parties</option>
+                         <option value="Prepare Gifts">Prepare Gifts</option>
+                         <option value="Baby siting">Baby siting</option>
                     </select>
                </div>
                <div class="form-group">

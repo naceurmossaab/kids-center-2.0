@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-// import Home from "../components/Home.vue";
+import Home from "../components/Home.vue";
 import SignIn from "../components/SignIn.vue";
 import SignUp from "../components/SignUp.vue";
 import About from "../components/About.vue";
@@ -9,11 +9,15 @@ import Services from "../components/Services.vue";
 const routes = [
 	{
 		path: "/",
-		component: Services,
+		component: Home,
 	},
 	{
 		path: "/forum",
 		component: Forum,
+	},
+	{
+		path: "/services",
+		component: Services,
 	},
 	{
 		path: "/signin",
