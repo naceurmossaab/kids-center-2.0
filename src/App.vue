@@ -13,7 +13,6 @@
   </div>
   <router-view/>
 </template>
-
 <script>
 import {inject} from 'vue';
 

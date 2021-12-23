@@ -61,19 +61,19 @@ export default {
 }
 </script>
 
-<style>
-     .signin{
-          margin: 5rem 0;
-          display:flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-     }
-     .signin h1{
-          font-weight: 700;
-          color: rgb(140, 140, 140);
-          margin: 1rem 0;
-     }
+<style scoped>
+	.signin {
+		margin: 5rem 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.signin h1 {
+		font-weight: 700;
+		color: rgb(140, 140, 140);
+		margin: 1rem 0;
+	}
 
      form{
           padding: 1rem 2rem;
@@ -83,26 +83,26 @@ export default {
           background-color: #fff;
      }
 
-     form *{
-          margin: 0.3rem 0;
-     }
+	form * {
+		margin: 0.3rem 0;
+	}
 
-     form button{
-          margin: 0.5rem 1rem 0 0;
-          padding: .2rem 1rem;
-     }
+	form button {
+		margin: 0.5rem 1rem 0 0;
+		padding: 0.2rem 1rem;
+	}
 
-     form span{
-          text-decoration: underline;
-          cursor: pointer;
-     }
+	form span {
+		text-decoration: underline;
+		cursor: pointer;
+	}
 
-     .error-form{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: red;
-          font-size: 15px;
-          font-weight: 500;
-     }
+	.error-form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: red;
+		font-size: 15px;
+		font-weight: 500;
+	}
 </style>
