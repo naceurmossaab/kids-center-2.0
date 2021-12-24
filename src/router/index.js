@@ -4,6 +4,7 @@ import SignIn from '../components/SignIn.vue' ;
 import SignUp from '../components/SignUp.vue';
 import About  from '../components/About.vue';
 import Forum from '../components/Forum.vue';
+import Services from '../components/Services.vue';
 
 const routes = [
   {
@@ -11,7 +12,11 @@ const routes = [
     component: Home
   },
   {
-    path: '/forum',
+    path: '/services',
+    component: Services
+  },
+  {
+    path: '/forum/:id',
     component: Forum
   },
   {

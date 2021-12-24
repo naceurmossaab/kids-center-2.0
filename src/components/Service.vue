@@ -1,7 +1,7 @@
 <template>
 	<figure class="snip0057 blue">
 		<figcaption>
-			<img class="user-picture" :src="service.picture" alt="" />
+			<img class="user-picture" :src="service.user_img" alt="" />
 			<h2>
 				{{ service.fullname }}
 			</h2>
@@ -62,9 +62,9 @@
 		font-family: "Raleway", Arial, sans-serif;
 		position: relative;
 		overflow: hidden;
-		margin: 10px;
-		min-width: 380px;
-		max-width: 480px;
+		margin: 10px 2rem;
+		min-width: 400px;
+		max-width: 400px;
 		width: 100%;
 		background: #ffffff;
 		color: #000000;

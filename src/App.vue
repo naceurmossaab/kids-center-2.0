@@ -1,13 +1,13 @@
 <template>
   <div id="nav" class="navbar">
     <img width="40" alt="kid center" src="https://img.icons8.com/cotton/50/000000/christmas-kid-2.png" />
-    <router-link to="/"><span @click="profile">Kids Center</span></router-link>
+    <router-link to="/"><span>Kids Center</span></router-link>
     <div class="spacer"></div>
     <router-link  to="/"><span>Home</span></router-link>
-    <router-link to="/forum"><span>Forum</span></router-link>
-    <router-link to="/"><span>Search</span></router-link>
+    <router-link v-if="user.username" :to="`/forum/${user._id}`"><span>Forum</span></router-link>
+    <router-link v-if="user.username" to="/services"><span>Search</span></router-link>
     <div class="spacer-right"></div>
-    <router-link v-if="user.username"  to="/profile"><span class="d-flex align-items-center"><img :src="user.user_img" class="user-logo" />{{user.username}}</span></router-link>
+    <router-link v-if="user.username"  to="/"><span class="d-flex align-items-center"><img :src="user.user_img" class="user-logo" />{{user.username}}</span></router-link>
     <router-link v-if="!user.username" to="/signin"> <span class="navbar-title">Sign In</span></router-link>
     <router-link v-if="user.username"  to="/">       <span @click="logout" class="navbar-title">Log Out</span></router-link>
   </div>
@@ -27,7 +27,6 @@ export default {
     },
     mounted(){
         this.EventBus.on('user', (user) => this.user = user);
-        this.EventBus.emit('user1', this.user);
     },
     methods:{
         logout(){

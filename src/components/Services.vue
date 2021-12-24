@@ -6,7 +6,7 @@
 	</div>
 </template>
 <script>
-	const axios = require("axios");
+	import axios from 'axios';
 	import Service from "./Service.vue";
 	export default {
 		name: "Services",
@@ -17,8 +17,7 @@
 			};
 		},
 		created() {
-			axios
-				.get("http://localhost:8000/user/service")
+			axios.get("http://localhost:8000/user/service")
 				.then(({ data }) => (this.services = data));
 		},
 	};
