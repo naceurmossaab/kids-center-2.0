@@ -258,6 +258,9 @@ header {
 	border-radius: 0 0 85% 85% / 30%;
 }
 header .overlay{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 	width: 100%;
 	height: 100%;
 	padding: 50px;
@@ -268,6 +271,13 @@ header .overlay{
         /* background-repeat:no-repeat;  */
 
 }
+
+header .overlay button{
+  width: 250px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
 
 h2 {
 	font-family: 'Dancing Script', cursive;
