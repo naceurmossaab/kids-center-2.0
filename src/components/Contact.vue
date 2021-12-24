@@ -119,9 +119,9 @@
 @media screen and (min-width: 642px) and (max-width:800px){
 	.main-content{width: 70%;}
 }
-.row > h2{
+/* .row > h2{
 	color:#008080;
-}
+} */
 .login_form{
 	background-color: #fff;
 	border-top-right-radius:20px;
