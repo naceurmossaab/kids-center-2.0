@@ -87,7 +87,7 @@ span {
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: hsl(200, 70%, 50%);
+    background-color: hsl(200, 27%, 59%);
     color: white;
     font-size: 17px;
     font-weight: 600;
