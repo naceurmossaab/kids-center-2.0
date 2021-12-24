@@ -6,6 +6,7 @@
 <h2>WELCOME TO KIDS CENTER</h2>
 <h3>Reasons for Choosing US</h3>
 <h3>We Provide With Quality Education To Our Kids</h3>
+<label ><button>contact</button><router-link to="/contact">Contact</router-link></label>
 	<br>
 <label> <router-link to="/signup"><button>Learn More</button></router-link></label>
 		</div>
@@ -78,8 +79,8 @@
           </div>
         </div>
       </div>
-      <h1>Kids Are The Best Explorers In The World
-</h1>
+      <span>Kids Are The Best Explorers In The World
+</span>
     </div>
 <!-- footer -->
 <footer class="site-footer">
