@@ -34,12 +34,14 @@ app.use("/editprofile", editprofile);
 app.use("/forum",forum);
 app.use("/admin",admin);
 
+
 // 404 errors
 app.use((req, res, next) => {
   const err = new Error("Not found");
   err.status = 404;
   next(err);
 });
+
 
 // server listening
 app.listen(8000, function () {

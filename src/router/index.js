@@ -5,9 +5,14 @@ import SignUp   from '../components/SignUp.vue';
 import About    from '../components/About.vue';
 import Forum    from '../components/Forum.vue';
 import Services from '../components/Services.vue';
+import Contact  from '../components/Contact.vue'
 import Admin    from '../components/Admin.vue';
 
 const routes = [
+  {
+    path: '/contact',
+    component: Contact
+  },
   {
     path: '/',
     component: Home
@@ -36,6 +41,7 @@ const routes = [
     path: '/admin/index',
     component: Admin
   }
+
 ]
 
 const router = createRouter({

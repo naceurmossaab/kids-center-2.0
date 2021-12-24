@@ -7,6 +7,7 @@
     <router-link v-if="user.username" :to="`/forum/${user._id}`"><span>Forum</span></router-link>
     <router-link v-if="user.username" to="/services"><span>Search</span></router-link>
     <div class="spacer-right"></div>
+    <router-link to="/contact"><span class="navbar-title">Contact</span></router-link>
     <router-link v-if="user.username"  to="/"><span class="d-flex align-items-center"><img :src="user.user_img" class="user-logo" />{{user.username}}</span></router-link>
     <router-link v-if="!user.username" to="/signin"> <span class="navbar-title">Sign In</span></router-link>
     <router-link v-if="user.username"  to="/">       <span @click="logout" class="navbar-title">Log Out</span></router-link>
@@ -76,6 +77,7 @@ span {
     margin:5%;
     margin-left: 25%;
     min-height: 300px;
+    /* background-color: salmon; */
 }
 
 .navbar {
@@ -86,7 +88,7 @@ span {
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: hsl(200, 70%, 50%);
+    background-color: hsl(200, 27%, 59%);
     color: white;
     font-size: 17px;
     font-weight: 600;
