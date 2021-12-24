@@ -79,12 +79,11 @@
           </div>
         </div>
       </div>
-      <span>Kids Are The Best Explorers In The World
-</span>
+      <!-- <span class="row d-block mx-auto"> Kids Are The Best Explorers In The World </span> -->
     </div>
 <!-- footer -->
 <footer class="site-footer">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
             <span class="text-white" data-aos="fade-up" data-aos-delay="100">

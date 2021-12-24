@@ -61,6 +61,7 @@ export default {
           this.user = data;
         })
         .catch(error   => console.error("forum user error : ", error));
+        
         this.getAllTheMessages();
   },
 

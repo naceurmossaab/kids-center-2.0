@@ -5,12 +5,11 @@
 	<div class="container-fluid">
 		<div class="row main-content bg-success text-center">
 			<div class="col-md-4 text-center company__info">
-				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
-				<h4 class="company_title">jjhjhj</h4>
+
 			</div>
 			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
 				<div class="container-fluid">
-					<div class="row">
+					<div class="row mt-3">
 						<h2>Contact Us</h2>
 					</div>
 					<div class="row">
@@ -34,7 +33,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="row">
+					<div class="row mb-5">
 						<p>Don't have an account? <a href="#"> <router-link to="/signup"><span>Register Here</span></router-link> </a></p>
 					</div>
 				</div>
@@ -98,7 +97,7 @@
 }
 .company__info{
 	/* background-color: #008080; */
-    background-image: url("https://images.pexels.com/photos/9902413/pexels-photo-9902413.jpeg");
+    background-image: url("https://c0.wallpaperflare.com/preview/333/921/149/postbox-mailbox-metal-american.jpg");
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	display: flex;
@@ -135,6 +134,7 @@
 }
 form{
 	padding: 0 2em;
+	box-shadow: none !important;
 }
 .form__input{
 	width: 100%;

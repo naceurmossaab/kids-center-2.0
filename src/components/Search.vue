@@ -8,9 +8,7 @@
 			<option value="School Transportation">School Transportation</option>
 			<option value="Healthy food">Healthy food</option>
 			<option value="Sport activities">Sport activities</option>
-			<option value="Entertainment activities">
-				Entertainment activities
-			</option>
+			<option value="Entertainment activities"> Entertainment activities </option>
 			<option value="Birthday and parties">Birthday and parties</option>
 			<option value="Prepare Gifts">Prepare Gifts</option>
 			<option value="Baby siting">Baby siting</option>

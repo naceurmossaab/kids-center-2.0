@@ -1,112 +1,101 @@
 <template>
+<!-- admin navbar -->
+<div id="nav" class="navbar">
+    <img width="40" alt="kid center" src="https://img.icons8.com/cotton/50/000000/christmas-kid-2.png" />
+    <router-link to="/admin/index"><span>Kids Center</span></router-link>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <router-link v-if="admin.username"  to="/admin/index"> <span class="d-flex align-items-center"><img :src="admin.user_img" class="user-logo" />{{admin.username}}</span></router-link>
+    <router-link v-if="!admin.username" to="/admin/index"> <span class="navbar-title">Sign In</span></router-link>
+    <router-link v-if="admin.username"  to="/admin/index"> <span @click="logout" class="navbar-title">Log Out</span></router-link>
+</div>
+
   <div v-if="!admin.username" class="signin">
     <!-- <h1>Sign In </h1> -->
     <form @submit.prevent="send">
       <div class="form-group">
         <label for="exampleInputUsername1">Username</label>
-        <input
-          v-model="username"
-          type="text"
-          class="form-control"
-          id="exampleInputUsername1"
-          placeholder="Username"
-          required
-        />
+        <input v-model="username" type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" required />
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input
-          v-model="password"
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password"
-          required
-        />
+        <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required />
       </div>
       <button type="submit" class="btn btn-primary">Sign In</button>
       <label for="errorSignIn" class="form-text error-form">{{ status }}</label>
     </form>
   </div>
-  <div v-if="admin.username" class="signin">
-    <div class="wrapper">
+  <div v-if="admin.username" class="row w-75 px-5 mx-5 d-block mx-auto">
 
-  <nav>
+    <!-- list of users -->
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>number</th>
+        <th>full name</th>
+        <th>email</th>
+        <th>adresse</th>
+        <th>city</th>
+        <th>status</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(user, i) in users" v-bind:key="i">
+        <th>{{i+1}}</th>
+        <th class="d-flex p-3"><img :src="user.user_img" class="user-logo" > {{user.fullname}}</th>
+        <th>{{user.email}}</th>
+        <th>{{user.address}}</th>
+        <th>{{user.city}}</th>
+        <th>{{user.connect ? "banned" : "active"}}</th>
+        <th @click="isBanned(user)"><img src="https://img.icons8.com/color/30/000000/cancel--v3.png"/></th>
+      </tr>
+    </tbody>
+  </table>
 
-    <header>
-      <span></span>
-      John Doe
-      <a></a>
-    </header>
+  <!-- list of forum messages -->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>number</th>
+        <th>message</th>
+        <th>user</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(msg, i) in forumMsg" v-bind:key="i">
+        <th>{{i+1}}</th>
+        <th>{{msg.message}}</th>
+        <th class="d-flex p-3"><img :src="msg.user.user_img" class="user-logo" > {{msg.user.fullname}}</th>
+        <th ></th>
+      </tr>
+    </tbody>
+  </table>
 
-    <ul>
-      <li><span>Navigation</span></li>
-      <li><a class="active">Dashboard</a></li>
-      <li><a>Statistics</a></li>
-      <li><a>Roadmap</a></li>
-      <li><a>Milestones</a></li>
-      <li><a>Tickets</a></li>
-      <li><a>GitHub</a></li>
-      <li><a>FAQ</a></li>
-      <li><span>Other</span></li>
-      <li><a>Search</a></li>
-      <li><a>Settings</a></li>
-      <li><a>Logout</a></li>
-    </ul>
-
-  </nav>
-
-  <main>
-
-    <h1>Flexbox Admin Template</h1>
-
-    <div class="flex-grid">
-      <div>
-        <h2>Clean CSS Code</h2>
-        <ul>
-          <li>no position: absolute</li>
-          <li>no float</li>
-          <li>no clearfix</li>
-          <li>no faux columns</li>
-          <li>no javascript</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Font Awesome</h2>
-        <ul>
-          <li>no images</li>
-          <li>no extra retina sprites</li>
-        </ul>
-      </div>
-      <div>
-        <h2>SCSS</h2>
-        <ul>
-          <li>no headache :)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="flex-grid">
-      <div>
-        <h2>Headline</h2>
-        Some Content
-      </div>
-      <div>
-        <h2>Headline</h2>
-        Some Content
-      </div>
-    </div>
-
-    <div class="flex-grid">
-      <div>
-        <h2>Headline</h2>
-        Some Content
-      </div>
-    </div>
-
-  </main>
-
-</div>
+  <!-- list of contact messages -->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>number</th>
+        <th>message</th>
+        <th>user</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(msg, i) in contact" v-bind:key="i">
+        <th>{{i+1}}</th>
+        <th>{{msg.message}}</th>
+        <th>{{msg.name}}   </th>
+        <th>{{msg.email}}  </th>
+        <th ></th>
+      </tr>
+    </tbody>
+  </table>
   </div>
 </template>
 
@@ -117,11 +106,24 @@ export default {
   name: "SignIn",
   data() {
     return {
-      admin: {},
+      admin   : {},
       username: "",
       password: "",
-      status: "",
+      status  : "",
+      users   : [],
+      forumMsg: [],
+      contact : []  
     };
+  },
+  created(){
+    // get all users 
+    axios.get("http://localhost:8000/user/admin")
+        .then(({data})=> this.users = data);
+
+    // get all msgs forum
+    axios.get("http://localhost:8000/forum")
+        .then(({data})=> this.forumMsg = data);
+    
   },
   methods: {
     send() {
@@ -136,21 +138,30 @@ export default {
           // console.log("signin response : ", data);
           this.username = "";
           this.password = "";
-          this.admin = data;
-          this.status = "";
+          this.admin    = data;
+          this.contact  = data.contact;
+          this.status   = "";
         })
         .catch((err) => {
           this.status = "wrrong username/password";
           console.log("signin error : ", err);
         });
     },
+
+    isBanned(user){
+      user.connect = !user.connect;
+      axios.put("http://localhost:8000/user/"+user._id, user)
+        .then(({data})=> this.users = data);
+    },
+
+    logout(){
+      this.admin = {};
+    }
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 .signin {
   margin: 5rem 0;
   display: flex;
@@ -195,169 +206,138 @@ form span {
   font-weight: 500;
 }
 
-*:before,
-*:after {
-  content: "";
-  display: block;
-  position: absolute;
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 0;
 }
-html,
-body {
-  height: 100%;
+
+a{
+  text-decoration: none !important;
 }
-body {
-  font: 15px "Open Sans", sans-serif;
-  color: #777;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    margin: 0 .7rem;
 }
-a {
-  cursor: pointer;
+
+.spacer {
+    flex: 0.5;
 }
-ul {
-  list-style: none;
+
+.spacer-right {
+    flex: 1;
 }
-.wrapper {
-  display: flex;
-  min-height: 100%;
+
+.container{
+    width:50%;
+    margin:5%;
+    margin-left: 25%;
+    min-height: 300px;
+    /* background-color: salmon; */
 }
-nav {
-  width: 200px;
-  background: #404040;
+
+.navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: hsl(200, 27%, 59%);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0 1rem;
 }
-nav header {
-  position: relative;
-  height: 80px;
-  padding: 20px 0 0 15px;
-  font-size: 16px;
-  color: #fff;
-  background: #333;
+.navbar img {
+    margin-right: .5rem;
 }
-nav header span {
-  position: relative;
-  display: inline-block;
-  width: 36px;
-  height: 36px;
-  margin: 0 10px 0 0;
-  vertical-align: middle;
-  border: 1px solid #fff;
+.navbar span {
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0.2rem 1rem;
 }
-nav header span:before {
-  content: "\f007";
-  font: normal 20px fontawesome;
-  top: 7px;
-  left: 9px;
+.navbar span:before {
+    content: '';
+    position: absolute;
+    width : calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: calc(2px/-1);
+    left: calc(2px/-1);
+    background: linear-gradient(to right, #fff 0%, #fff 100%), linear-gradient(to top, #fff 50%, transparent 50%), linear-gradient(to top, #fff 50%, transparent 50%), linear-gradient(to right, #fff 0%, #fff 100%), linear-gradient(to left, #fff 0%, #fff 100%);
+    background-size: 100% 2px, 2px 200%, 2px 200%, 0% 2px, 0% 2px;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform 0.3s ease-in-out, background-position 0.3s ease-in-out, background-size 0.3s ease-in-out;
+    transform: scaleX(0) rotate(0deg);
+    transition-delay: 0.3s, 0.3s, 0s;
 }
-nav header a:before {
-  content: "\f08b";
-  font: normal 20px fontawesome;
-  top: 28px;
-  right: 15px;
+.navbar span:hover:before {
+    background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
+    background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+    transform: scaleX(1) rotate(0deg);
+    transition-delay: 0s, 0s, 0.3s;
 }
-nav ul span {
-  display: block;
-  padding: 15px;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  border-bottom: 1px solid #333;
+
+.user-logo{
+    width : 25px;
+    height: 25px;
+    border-radius: 50%;
 }
-nav ul a {
-  position: relative;
-  display: block;
-  padding: 15px 15px 17px 50px;
-  color: #fff;
-  border-bottom: 1px solid #333;
+
+@-webkit-keyframes orbit {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
-nav ul a:hover,
-nav ul a.active {
-  background: #535353;
+@keyframes orbit {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
-nav ul a:before {
-  font: normal 16px fontawesome;
-  top: 15px;
-  left: 18px;
+@-webkit-keyframes invert-orbit {
+    0% {
+        transform: rotateZ(360deg) rotateY(30deg) rotateX(-75deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg) rotateY(30deg) rotateX(-75deg);
+    }
 }
-nav ul li:nth-child(2) a:before {
-  content: "\f00a";
+@keyframes invert-orbit {
+    0% {
+        transform: rotateZ(360deg) rotateY(30deg) rotateX(-75deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg) rotateY(30deg) rotateX(-75deg);
+    }
 }
-nav ul li:nth-child(3) a:before {
-  content: "\f012";
+
+table{
+  margin: 2rem 0 !important;
+  background-color: #fff !important;
 }
-nav ul li:nth-child(4) a:before {
-  content: "\f018";
-}
-nav ul li:nth-child(5) a:before {
-  content: "\f024";
-}
-nav ul li:nth-child(6) a:before {
-  content: "\f0c3";
-}
-nav ul li:nth-child(7) a:before {
-  content: "\f09b";
-}
-nav ul li:nth-child(8) a:before {
-  content: "\f0fa";
-}
-nav ul li:nth-child(10) a:before {
-  content: "\f002";
-}
-nav ul li:nth-child(11) a:before {
-  content: "\f085";
-}
-nav ul li:nth-child(12) a:before {
-  content: "\f08b";
-}
-main {
-  flex: 1;
-  padding: 25px;
-  background: #f5f5f5;
-}
-main h1 {
-  height: 80px;
-  margin: -25px -25px 25px -25px;
-  padding: 0 25px;
-  line-height: 76px;
-  font-size: 24px;
-  font-weight: 400;
-  background: #ddd;
-}
-.flex-grid {
-  display: flex;
-}
-.flex-grid > div {
-  flex: 1;
-  margin: 0 20px 20px 0;
-  padding: 15px;
-  border: 1px solid #ddd;
-  background: #fff;
-}
-.flex-grid > div:last-child {
-  margin-right: 0;
-}
-.flex-grid h2 {
-  margin: -15px -15px 15px -15px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: 400;
-  border-bottom: 1px solid #ddd;
-}
-.flex-grid li {
-  position: relative;
-  margin: 0 0 10px;
-  padding: 0 0 0 25px;
-}
-.flex-grid li:before {
-  content: "\f00c";
-  font: normal 16px fontawesome;
-  top: 0;
-  left: 0;
-  color: #999;
-}
-/* ** Media Queries ***********************************************************/
-@media (max-width: 1000px) {
-  .flex-grid {
-    flex-direction: column;
-  }
-  .flex-grid > div {
-    margin-right: 0;
-  }
-}
+
 </style>

@@ -17,13 +17,17 @@
                <div class="form-group col-md-6" v-if="specialitySelect">
                     <label for="inputSpeciality">Specialty</label>
                     <select v-model="speciality" class="form-control" id="inputSpecialty" size="1" name="specialty">
-                         <option selected>Specialty</option>
-                         <option value="English">English</option>
-                         <option value="Français">Français</option>
-                         <option value="Arabe">Arabe</option>
-                         <option value="Math">Math</option>
-                         <option value="Science">Science</option>
-                         <option value="Physics">Physics</option>
+                         <option selected        >Speciality               </option>
+                         <option value="English" >Teacher                  </option>
+                         <option value="Français">Health care              </option>
+                         <option value="Arabe"   >Mental care              </option>
+                         <option value="Math"    >School Transportation    </option>
+                         <option value="Science" >Healthy food             </option>
+                         <option value="Physics" >Sport activities         </option>
+                         <option value="Physics" >Entertainment activities </option>
+                         <option value="Physics" >Birthday and parties     </option>
+                         <option value="Physics" >Prepare Gifts            </option>
+                         <option value="Physics" >Baby siting              </option>
                     </select>
                </div>
                <div class="form-group">
