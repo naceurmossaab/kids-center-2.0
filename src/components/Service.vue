@@ -5,8 +5,8 @@
 			<h2>
 				{{ service.fullname }}
 			</h2>
-			<p>{{ service.location }}</p>
-			<p>{{ service.mobile }}</p>
+			<p>{{ service.address }}</p>
+			<p>(216) {{ service.phone }}</p>
 			<p>{{ service.email }}</p>
 			<div class="icons">
 				<a href="#"><i class="ion-ios-home"></i></a
@@ -17,7 +17,7 @@
 		<div class="image">
 			<img :src="servisesPics[service.service]" alt="sample3" />
 		</div>
-		<div class="position">{{ service.service }}</div>
+		<div class="position">{{ service.specialty }}</div>
 	</figure>
 </template>
 <script>
