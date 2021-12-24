@@ -1,12 +1,7 @@
 <template>
 	<div class="select">
 		<label for="categories">Service categorie</label>
-		<select
-			name="categories"
-			id="cat"
-			v-model="categorie"
-			@change="filterCategorie"
-		>
+		<select name="categories" id="cat" v-model="categorie" @change="filterCategorie" >
 			<option value="Teacher">Teacher</option>
 			<option value="Health care">Health care</option>
 			<option value="Mental care">Mental care</option>

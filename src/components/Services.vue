@@ -1,24 +1,17 @@
 <template>
 	<div class="main-box">
-		<Search
-			@filter-categorie="filterCategorie"
-			@filter-adress="filterAdress"
-		/>
+		<Search @filter-categorie="filterCategorie" @filter-adress="filterAdress"/>
 		<div class="services-conainer">
-			<div
-				class="service-conainer"
-				v-for="service in services"
-				:key="service._id"
-			>
+			<div	class="service-conainer" v-for="service in services" :key="service._id" >
 				<Service :service="service" />
 			</div>
 		</div>
 	</div>
 </template>
 <script>
-	const axios = require("axios");
+	import axios from 'axios';
 	import Service from "./Service.vue";
-	import Search from "./Search.vue";
+	import Search  from "./Search.vue" ;
 
 	export default {
 		name: "Services",
@@ -29,8 +22,7 @@
 			};
 		},
 		created() {
-			axios
-				.get("http://localhost:8000/user/service")
+			axios.get("http://localhost:8000/user/service")
 				.then(({ data }) => (this.services = data));
 		},
 		methods: {
@@ -41,7 +33,7 @@
 					.then(
 						({ data }) =>
 							(this.services = data.filter(
-								(service) => service.service === categorie
+								(service) => service.specialty === categorie
 							))
 					);
 			},
@@ -52,7 +44,7 @@
 					.then(
 						({ data }) =>
 							(this.services = data.filter(
-								(service) => service.location === adress
+								(service) => service.address === adress
 							))
 					);
 			},
