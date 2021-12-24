@@ -76,7 +76,7 @@ span {
     margin:5%;
     margin-left: 25%;
     min-height: 300px;
-    background-color: salmon;
+    /* background-color: salmon; */
 }
 
 .navbar {

@@ -6,7 +6,7 @@
 <h2>WELCOME TO KIDS CENTER</h2>
 <h3>Reasons for Choosing US</h3>
 <h3>We Provide With Quality Education To Our Kids</h3>
-<label ><button>contact</button><router-link to="/contact">Contact</router-link></label>
+<label ><router-link to="/contact">Contact</router-link></label>
 	<br>
 <label> <router-link to="/signup"><button>Learn More</button></router-link></label>
 		</div>
