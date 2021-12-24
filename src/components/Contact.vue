@@ -1,12 +1,6 @@
 <template>
   <div >
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Yinka Enoch Adedokun">
-	<title>Login Page</title>
-</head>
-<body>
+
 	<!-- Main Content -->
 	<div class="container-fluid">
 		<div class="row main-content bg-success text-center">
@@ -20,7 +14,7 @@
 						<h2>Contact Us</h2>
 					</div>
 					<div class="row">
-						<form control="" class="form-group">
+						<form @submit.prevent="send" class="form-group">
 							<div class="row">
                               
 								<input type="text" v-model="name" id="name"  name="name"  class="form__input" placeholder="Name">
@@ -35,7 +29,8 @@
 								
 							</div>
 							<div class="row">
-								<input @click="send" type="submit" value="Submit" class="btn">
+								<input type="submit" value="Submit" class="btn">
+                                <label for="errorSignIn mx-3" class="form-text error-form">{{status}}</label>
 							</div>
 						</form>
 					</div>
@@ -50,7 +45,7 @@
 	<div class="container-fluid text-center footer">
 		
 	</div>
-</body>
+
   </div>
 </template>
 
@@ -79,7 +74,13 @@
                     }
 
                     axios.post('http://localhost:8000/admin/contact', contact)
-                         .then(() => this.status = "message sended ...")
+                         .then(() => {
+                             this.status = "message sended ...";
+                             this.name = '';
+                             this.email = '';
+                             this.message = '';
+                             
+                             })
                          .catch(err => console.log("contact error : ", err))
                }
           }
@@ -87,7 +88,7 @@
 </script>
 
 
-<style>
+<style scoped>
 .main-content{
 	width: 50%;
 	border-radius: 20px;

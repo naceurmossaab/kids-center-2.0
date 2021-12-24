@@ -7,7 +7,7 @@ const users = require("./routers/users.js");
 const forum=require("./routers/events.js")
 const services = require("./routers/services.js")
 const editprofile = require("./routers/editprofile.js");
-
+const admin = require("./routers/admin.js");
 var cors = require('cors');
 
 
@@ -32,6 +32,7 @@ app.use("/user", users); // /users (CRUD) /users/:userId (RUD)
 app.use("/services", services);
 app.use("/editprofile", editprofile);
 app.use("/forum",forum);
+app.use("/admin",admin);
 
 
 // 404 errors
