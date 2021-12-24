@@ -12,7 +12,7 @@
 		<div class="row main-content bg-success text-center">
 			<div class="col-md-4 text-center company__info">
 				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
-				<h4 class="company_title">Your Company Logo</h4>
+				<h4 class="company_title">jjhjhj</h4>
 			</div>
 			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
 				<div class="container-fluid">
@@ -23,19 +23,19 @@
 						<form control="" class="form-group">
 							<div class="row">
                               
-								<input type="text" name="username" id="username" class="form__input" placeholder="Name">
+								<input type="text" v-model="name" id="name"  name="name"  class="form__input" placeholder="Name">
 							</div>
 							<div class="row">
 								<!-- <span class="fa fa-lock"></span> -->
-								<input type="password" name="password" id="password" class="form__input" placeholder="E-mail">
+								<input type="text" v-model="email" id="email" name="email" class="form__input" placeholder="E-mail">
 							</div>
 							<div class="row">
                                 
-								<textarea name="remember_me" id="remember_me" class="form__input" placeholder="Your Message"></textarea>
+								<textarea   v-model="message" class="form-control" id="message" name="message" placeholder="Your Message"></textarea>
 								
 							</div>
 							<div class="row">
-								<input type="submit" value="Submit" class="btn">
+								<input @click="send" type="submit" value="Submit" class="btn">
 							</div>
 						</form>
 					</div>
@@ -58,14 +58,34 @@
 
 
 <script>
+     import axios from 'axios';
 
+     export default {
+          name: 'Contact',
+          data() {
+               return {
+                    name   : '',
+                    email  : '',
+                    message: '',
+                    status : ''
+               }
+          },
+          methods: {
+               send() {
+                    const contact = {
+                         name   : this.name,
+                         email  : this.email,
+                         message: this.message
+                    }
 
-export default {
-  name: "Contact",
- 
- 
-};
+                    axios.post('http://localhost:8000/admin/contact', contact)
+                         .then(() => this.status = "message sended ...")
+                         .catch(err => console.log("contact error : ", err))
+               }
+          }
+     }
 </script>
+
 
 <style>
 .main-content{

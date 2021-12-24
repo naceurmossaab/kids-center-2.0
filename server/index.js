@@ -7,6 +7,7 @@ const users = require("./routers/users.js");
 const forum=require("./routers/events.js")
 const services = require("./routers/services.js")
 const editprofile = require("./routers/editprofile.js");
+
 var cors = require('cors');
 
 
@@ -32,12 +33,14 @@ app.use("/services", services);
 app.use("/editprofile", editprofile);
 app.use("/forum",forum);
 
+
 // 404 errors
 app.use((req, res, next) => {
   const err = new Error("Not found");
   err.status = 404;
   next(err);
 });
+
 
 // server listening
 app.listen(8000, function () {
