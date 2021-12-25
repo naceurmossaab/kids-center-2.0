@@ -33,6 +33,7 @@
         ><span>Search</span></router-link
       >
       <div class="spacer-right"></div>
+      <router-link to="/about"><span class="navbar-title">About</span></router-link>
       <router-link to="/contact"
         ><img src="https://img.icons8.com/officel/30/000000/new-message.png"
       /></router-link>
