@@ -1,12 +1,12 @@
 <template>
 	<figure class="snip0057 blue">
 		<figcaption>
-			<img class="user-picture" :src="service.picture" alt="" />
+			<img class="user-picture" :src="service.user_img" alt="" />
 			<h2>
-				{{ service.fullName }}
+				{{ service.fullname }}
 			</h2>
-			<p>{{ service.location }}</p>
-			<p>(216) {{ service.mobile }}</p>
+			<p>{{ service.city }}</p>
+			<p>(216) {{ service.phone }}</p>
 			<p>{{ service.email }}</p>
 			<div class="icons">
 				<a href="#"><i class="ion-ios-home"></i></a
@@ -15,9 +15,9 @@
 			</div>
 		</figcaption>
 		<div class="image">
-			<img :src="servisesPics[service.service]" alt="sample3" />
+			<img :src="servisesPics[service.specialty]" alt="sample3" />
 		</div>
-		<div class="position">{{ service.service }}</div>
+		<div class="position">{{ service.specialty }}</div>
 	</figure>
 </template>
 <script>
@@ -29,7 +29,7 @@
 		data() {
 			return {
 				servisesPics: {
-					Teacher:
+					"English":
 						"https://media.istockphoto.com/photos/african-american-girl-raising-her-hands-while-sitting-on-her-desk-in-picture-id1323715308?b=1&k=20&m=1323715308&s=170667a&w=0&h=MeG-_I7iI4HsElwGrxCgMm7P4QkJsWGmwvcrOyYnGlc=",
 					"Health care":
 						"https://media.istockphoto.com/photos/african-american-doctor-with-face-mask-examining-boys-throat-during-a-picture-id1287924870?b=1&k=20&m=1287924870&s=170667a&w=0&h=IQXjrdzzp83xAZyd7oLHog0wCluKFZc5RD-Z5ZsUirM=",
@@ -62,9 +62,9 @@
 		font-family: "Raleway", Arial, sans-serif;
 		position: relative;
 		overflow: hidden;
-		margin: 10px;
-		min-width: 380px;
-		max-width: 480px;
+		margin: 10px 2rem;
+		min-width: 400px;
+		max-width: 400px;
 		width: 100%;
 		background: #ffffff;
 		color: #000000;
@@ -212,11 +212,11 @@
 			left: 0px;
 		}
 	}
-	img {
+	/* img {
 		max-width: none !important;
-	}
+	} */
 	.user-picture {
 		border-radius: 50%;
-		margin-left: 45px;
+		/* margin-left: 45px; */
 	}
 </style>

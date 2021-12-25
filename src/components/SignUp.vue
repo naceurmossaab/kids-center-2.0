@@ -127,7 +127,7 @@ export default {
                }
                
                axios.post('http://localhost:8000/auth/signup', user)
-                    .then(({data}) => console.log("signup response : ", data))
+                    .then(() => this.$router.push("/signin"))
                     .catch(err => console.log("signup response : ", err))
           },
           specialityShow(e){
@@ -137,53 +137,54 @@ export default {
 }
 </script>
 
-<style scoped>
-	.signup {
-		margin: 4rem 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	.signup h1 {
-		font-weight: 700;
-		color: rgb(140, 140, 140);
-		margin: 1rem 0;
-	}
+<style>
+     .signup{
+          margin: 4rem 0;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+     .signup h1{
+          font-weight: 700;
+          color: rgb(140, 140, 140);
+          margin: 1rem 0;
+     }
 
-	form {
-		padding: 1rem 2rem;
-		background-color: rgb(240, 240, 240);
-		width: 500px;
-		border-radius: 5px;
-		box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
-	}
+     form{
+          padding: 1rem 2rem;
+          background-color: rgb(240, 240, 240);
+          width: 500px;
+          border-radius: 5px;
+          box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
+     }
 
-	form * {
-		margin: 0.3rem 0;
-	}
+     form *{
+          margin: 0.3rem 0;
+     }
 
-	form button {
-		margin: 0.5rem 1rem 0 0;
-		padding: 0.2rem 1rem;
-	}
+     form button{
+          margin: 0.5rem 1rem 0 0;
+          padding: .2rem 1rem;
+     }
 
-	form span {
-		text-decoration: underline;
-		cursor: pointer;
-	}
+     form span{
+          text-decoration: underline;
+          cursor: pointer;
+     }
 
-	.form-category {
-		font-weight: 500;
-		font-size: 16px;
-	}
+     .form-category{
+          font-weight: 500;
+          font-size: 16px;
+     }
 
-	.error-form {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: red;
-		font-size: 15px;
-		font-weight: 500;
-	}
+     .error-form{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: red;
+          font-size: 15px;
+          font-weight: 500;
+     }
+
 </style>

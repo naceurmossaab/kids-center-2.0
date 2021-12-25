@@ -19,7 +19,7 @@
 
 <script>
 import axios from 'axios';
-import {EventBus} from '../EventBus.js';
+import {inject} from 'vue';
 
 export default {
      name : 'SignIn',
@@ -28,7 +28,8 @@ export default {
                user    : {},
                username: '',
                password: '',
-               status  : ''
+               status  : '',
+               EventBus : inject('EventBus')
           }
      },
      methods :{
@@ -37,7 +38,7 @@ export default {
                     username: this.username,
                     password: this.password
                }
-               
+                              
                axios.post('http://localhost:8000/auth/signin', user)
                     .then(({data}) => {
                          // console.log("signin response : ", data);
@@ -45,7 +46,8 @@ export default {
                          this.password = '';
                          this.user   = data;
                          this.status = '';
-                         EventBus.emit('user', this.user);
+
+                         this.EventBus.emit('user', this.user);
                          this.$router.push("/");
                          })
                     .catch(err => {
@@ -59,19 +61,19 @@ export default {
 }
 </script>
 
-<style scoped>
-	.signin {
-		margin: 5rem 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	.signin h1 {
-		font-weight: 700;
-		color: rgb(140, 140, 140);
-		margin: 1rem 0;
-	}
+<style>
+     .signin{
+          margin: 5rem 0;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+     .signin h1{
+          font-weight: 700;
+          color: rgb(140, 140, 140);
+          margin: 1rem 0;
+     }
 
      form{
           padding: 1rem 2rem;
@@ -81,26 +83,26 @@ export default {
           background-color: #fff;
      }
 
-	form * {
-		margin: 0.3rem 0;
-	}
+     form *{
+          margin: 0.3rem 0;
+     }
 
-	form button {
-		margin: 0.5rem 1rem 0 0;
-		padding: 0.2rem 1rem;
-	}
+     form button{
+          margin: 0.5rem 1rem 0 0;
+          padding: .2rem 1rem;
+     }
 
-	form span {
-		text-decoration: underline;
-		cursor: pointer;
-	}
+     form span{
+          text-decoration: underline;
+          cursor: pointer;
+     }
 
-	.error-form {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: red;
-		font-size: 15px;
-		font-weight: 500;
-	}
+     .error-form{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: red;
+          font-size: 15px;
+          font-weight: 500;
+     }
 </style>
