@@ -1,8 +1,8 @@
 <template>
   <div> 
     <div class="about-section">
-  <span>Our Mission</span>
-  <p>To Provide good Quality of Education For Your Kids And Collect Donation For Kids That Need Help Around The World</p>
+  <h2>Our Mission</h2>
+  <h6>To Provide good Quality of Education For Your Kids And Collect Donation For Kids That Need Help Around The World</h6>
   
 </div>
 
@@ -13,7 +13,7 @@
       <img src="https://avatars.githubusercontent.com/u/90458850?v=4" alt="Jane" style="width:100%">
       <div class="container">
         <h2>Belguesmi Sakr</h2>
-        <p><button class="button">Contact</button></p>
+        <p><button class="button"><a href="https://github.com/BelguesmiSakr" class="other-links">Contact</a></button></p>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
       <div class="container">
         <h2>Naseur Mossab</h2>
        
-        <p><button class="button">Contact</button></p>
+        <p><button class="button"><a href="https://github.com/naceurmossaab" class="other-links">Contact</a></button></p>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
       <img src="https://scontent.ftun16-1.fna.fbcdn.net/v/t1.6435-9/123486814_1060360594396739_2687984173334952824_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=bRr96in6848AX9IAD_1&_nc_ht=scontent.ftun16-1.fna&oh=00_AT9TNVl_Uji3xHN-o0AtMJ6FlbkirWBSUdaJowTHCe0cCA&oe=61EAD7A4" alt="Jane" style="width:100%">
       <div class="container">
         <h2>Chaabani Sarra</h2>
-        <p><button class="button">Contact</button></p>
+        <p><button class="button"><a href="https://github.com/ChaabaniSarra" class="other-links">Contact</a></button></p>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
         
         
        
-        <p><button class="button">Contact</button></p>
+        <p><button class="button"><a href="https://github.com/baklouti118" class="other-links">Contact</a></button></p>
       </div>
     </div>
   </div>
@@ -57,9 +57,13 @@
         <h2>Ali Boubaker</h2>
         
         
+         
         
         
-        <p><button class="button">Contact</button></p>
+        
+        
+        
+        <p><button class="button"><a href="https://github.com/Ali-boubaker" class="other-links">Contact</a></button></p>
       </div>
     </div>
   </div>
@@ -88,14 +92,17 @@
     </ul>
     <ul class="menu">
      
-      <label ><router-link  to="/"><a class="menu__item">Home</a></router-link></label>
-      <label ><router-link class="menu__item" to="/about">Team</router-link></label>
-      <label ><router-link  class="menu__item" to="/contact">Contact</router-link></label>
+      <label ><router-link  class="menu__link" to="/"> Home</router-link></label>
+      <label ><router-link class="menu__link" to="/about">Team</router-link></label>
+      <label ><router-link  class="menu__link" to="/contact">Contact</router-link></label>
 
 
 
     </ul>
-    <p>&copy;2021 Created with @heart by Kids_Center </p> 
+     <p class="copyright">
+        2021 |
+      <a>Created with❤️ by kids Center</a>
+    </p>
   </footer>
   </div>
 </template>
@@ -108,6 +115,16 @@ export default {
 
 <style scoped>
 /* footer */
+.copyright {
+  font-size: 10px;
+
+  color: white;
+
+  letter-spacing: 1.5px;
+
+  word-spacing: 2px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -206,11 +223,13 @@ html {
   width: 33.3%;
   margin-bottom: 16px;
   padding: 0 8px;
+  border-radius: 50px;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(48, 133, 155, 0.993);
   margin: 8px;
+  border-radius: 10px;
 }
 
 .about-section {
@@ -244,6 +263,7 @@ html {
   text-align: center;
   cursor: pointer;
   width: 100%;
+  border-radius: 80px;
 }
 
 .button:hover {

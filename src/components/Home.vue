@@ -104,15 +104,19 @@
           <ion-icon name="logo-instagram"></ion-icon>
         </a></li>
     </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" >Home</a></li>
-      <li class="menu__item"><a class="menu__link">About</a></li>
-      <li class="menu__item"><a class="menu__link" >Services</a></li>
-      <li class="menu__item"><a class="menu__link">Team</a></li>
-      <li class="menu__item"><a class="menu__link" >Contact</a></li>
+   <ul class="menu">
+     
+      <label ><router-link  class="menu__link" to="/"> Home</router-link></label>
+      <label ><router-link class="menu__link" to="/about">Team</router-link></label>
+      <label ><router-link  class="menu__link" to="/contact">Contact</router-link></label>
+
+
 
     </ul>
-    <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+     <p class="copyright">
+        2021 |
+      <a>Created with❤️ by kids Center</a>
+    </p>
   </footer>
   </div>
 </template>
@@ -301,6 +305,7 @@ body {
   width: 100%;
   height: 100px;
   background: url("https://i.ibb.co/wQZVxxk/wave.png");
+ 
   background-size: 1000px 100px;
 }
 
@@ -309,7 +314,7 @@ body {
   opacity: 1;
   bottom: 0;
   
-  animation: animateWaves 4s linear infinite color #748fb8e5;;
+  animation: animateWaves 4s linear infinite color #748fb8e5 !important;
 }
 
 /* the design of the home page */
