@@ -145,7 +145,7 @@ form{
 	transition: all .5s ease;
 }
 .form__input:focus{
-	border-bottom-color: #008080;
+	/* border-bottom-color: #008080; */
 	/* box-shadow: 0 0 5px rgba(0,80,80,.4);  */
 	border-radius: 4px;
 }
