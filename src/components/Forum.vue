@@ -170,13 +170,16 @@ h1 {
   display: block;
 }
 .panel .panel-element .element-content .content-post .post-content .post-title {
-  font-size: 14px;
-  color: #afadad;
+  font-size: 17px;
+  font-weight: 700;
+  color: #084298;
 }
 .panel .panel-element .element-content .content-post .post-content .post-body {
-  margin-top: 5px;
-  font-size: 12px;
-  color: #cccbcb;
+  margin-top : 5px;
+  padding    : 5px;
+  font-size  : 15px;
+  font-weight: 500;
+  color: #3a3636;
 }
 .panel .panel-element .element-content:hover .btn-more {
   opacity: 1;
