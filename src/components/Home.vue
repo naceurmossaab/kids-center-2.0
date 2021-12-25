@@ -1,44 +1,48 @@
 <template>
-  <div >
+  <div>
     <!-- home page -->
     <header>
-	<div class="overlay">
-<h2>WELCOME TO KIDS CENTER</h2>
-<h3>Reasons for Choosing US</h3>
-<h3>We Provide With Quality Education To Our Kids</h3>
+      <div class="overlay">
+        <h2>WELCOME TO KIDS CENTER</h2>
+        <h3>Reasons for Choosing US</h3>
+        <h3>We Provide With Quality Education To Our Kids</h3>
 
-	<br>
-<label> <router-link to="/signup"><button>Learn More</button></router-link></label>
-		</div>
-</header>
-<!-- events -->
-<div class="my-5">
-      
+        <br />
+        <label>
+          <router-link to="/signup"
+            ><button>Learn More</button></router-link
+          ></label
+        >
+      </div>
+    </header>
+    <!-- events -->
+    <div class="my-5">
       <div class="wrap-cards">
         <div class="card">
           <div class="wrap-image">
             <img
-              class="img-event" src="https://images.pexels.com/photos/8107846/pexels-photo-8107846.jpeg"
+              class="img-event"
+              src="https://images.pexels.com/photos/8107846/pexels-photo-8107846.jpeg"
               alt="animals pictures"
             />
             <svg viewBox="0 0 100 100" preserveAspectRatio="none">
               <polygon points="0,100 100,100 100,0"></polygon>
             </svg>
           </div>
-        
+
           <div class="contents">
             <h3>Various Programs</h3>
             <div class="text">
-             We have a variety of programs to offer your children regardless of their age and level of knowledge.
+              We have a variety of programs to offer your children regardless of
+              their age and level of knowledge.
             </div>
           </div>
         </div>
         <div class="card">
           <div class="wrap-image">
             <img
-             class="img-event"
+              class="img-event"
               src="https://images.pexels.com/photos/8471964/pexels-photo-8471964.jpeg"
-              
             />
             <svg viewBox="0 0 100 100" preserveAspectRatio="none">
               <polygon
@@ -46,20 +50,20 @@
               ></polygon>
             </svg>
           </div>
-     
+
           <div class="contents">
             <h3>Hobby Groups</h3>
             <div class="text">
-              The groups where your children will be educated are created according to your child’s interests.
+              The groups where your children will be educated are created
+              according to your child’s interests.
             </div>
           </div>
         </div>
         <div class="card">
           <div class="wrap-image">
             <img
-             class="img-event"
+              class="img-event"
               src="https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg"
-              
             />
             <svg
               viewBox="-2.93 488.5 604.753 113.677"
@@ -70,54 +74,66 @@
               ></path>
             </svg>
           </div>
-         
+
           <div class="contents">
             <h3>Qualified Teachers</h3>
             <div class="text">
-            We employ only highly skilled teachers with more than 5 years of experience in teaching children.
+              We employ only highly skilled teachers with more than 5 years of
+              experience in teaching children.
             </div>
           </div>
         </div>
       </div>
-      <h1>Kids Are The Best Explorers In The World
-</h1>
+      <h1>Kids Are The Best Explorers In The World</h1>
     </div>
-<!-- footer -->
-<footer class="footer">
-    <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-      <div class="wave" id="wave4"></div>
-    </div>
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-   <ul class="menu">
-     
-      <label ><router-link  class="menu__link" to="/"> Home</router-link></label>
-      <label ><router-link class="menu__link" to="/about">Team</router-link></label>
-      <label ><router-link  class="menu__link" to="/contact">Contact</router-link></label>
-
-
-
-    </ul>
-     <p class="copyright">
+    <!-- footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <label
+          ><router-link class="menu__link" to="/"> Home</router-link></label
+        >
+        <label
+          ><router-link class="menu__link" to="/about">Team</router-link></label
+        >
+        <label
+          ><router-link class="menu__link" to="/contact"
+            >Contact</router-link
+          ></label
+        >
+      </ul>
+      <p class="copyright">
         2021 |
-      <a>Created with❤️ by kids Center</a>
-    </p>
-  </footer>
+        <a>Created with❤️ by kids Center</a>
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -125,17 +141,16 @@
 // @ is an alias to /src
 
 export default {
-  name: 'Home'
-}
+  name: "Home",
+};
 </script>
 
 <style scoped>
 /* event */
 
- .img-event{
-   max-height: 350px;
- }
-
+.img-event {
+  max-height: 350px;
+}
 
 *,
 *::before,
@@ -164,7 +179,7 @@ h1 {
   margin: 0 0 4rem;
   text-align: center;
   font-size: 1.6em;
-  color:  #5c899e;
+  color: #5c899e;
 }
 .wrap-cards {
   display: flex;
@@ -219,7 +234,6 @@ h1 {
   line-height: 1.6;
   font-size: 0.9em;
 }
-
 
 /* footer */
 * {
@@ -304,8 +318,8 @@ body {
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
- 
+  /* background: url("https://i.ibb.co/wQZVxxk/wave.png"); */
+
   background-size: 1000px 100px;
 }
 
@@ -313,72 +327,75 @@ body {
   z-index: 1000;
   opacity: 1;
   bottom: 0;
-  
+
   animation: animateWaves 4s linear infinite color #748fb8e5 !important;
 }
 
 /* the design of the home page */
-*{padding: 0; margin: 0; box-sizing: border-box;}
-body{height: 900px;}
-header {
-    /* background-color: rgba(248, 248, 248, 0.335); */
-	background-image: url('https://images.pexels.com/photos/5428267/pexels-photo-5428267.jpeg');
- 
-	text-align: center;
-	/* width: 100%; */
-	height: auto;
-	background-size: cover;
-	background-attachment: fixed;
-	position: relative;
-	overflow: hidden;
-	border-radius: 0 0 85% 85% / 30%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-header .overlay{
+body {
+  height: 900px;
+}
+header {
+  /* background-color: rgba(248, 248, 248, 0.335); */
+  background-image: url("https://images.pexels.com/photos/5428267/pexels-photo-5428267.jpeg");
+
+  text-align: center;
+  /* width: 100%; */
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay {
   display: flex;
   flex-direction: column;
   justify-content: center;
-	width: 100%;
-	height: 100%;
-	padding: 50px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
   /* background-image: linear-gradient( 135deg, #a1c2d89d 10%, #bde4ebce 100%); */
-		/* background: url("https://wallpaperaccess.com/full/1265273.jpg"); */
-        /* background-repeat:no-repeat;  */
-
+  /* background: url("https://wallpaperaccess.com/full/1265273.jpg"); */
+  /* background-repeat:no-repeat;  */
 }
 
-header .overlay button{
+header .overlay button {
   width: 250px;
   margin: 0 auto;
   margin-bottom: 3rem;
 }
 
-
 h2 {
-	font-family: 'Dancing Script', cursive;
-	font-size: 80px;
-	margin-bottom: 30px;
+  font-family: "Dancing Script", cursive;
+  font-size: 80px;
+  margin-bottom: 30px;
 }
 
-h3, p {
-	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 30px;
+h3,
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 30px;
 }
 
 button {
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	border-radius: 50px;
-	color: #333;
-	background: #fff;
-	margin-bottom: 50px;
-	box-shadow: 0 3px 20px 0 #0000003b;
-
-
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #333;
+  background: #fff;
+  margin-bottom: 50px;
+  box-shadow: 0 3px 20px 0 #0000003b;
 }
-button:hover{
-	cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
 </style>
